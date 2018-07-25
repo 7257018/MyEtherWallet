@@ -36,12 +36,12 @@ export default {
         return 0
       })
     }
-  },
-  async mounted () {
-    if (this.$store.state.online) {
-      this.tokens = await this.getRates()
-    }
   }
+  // async mounted () {
+  //   if (this.$store.state.online) {
+  //     this.tokens = await this.getRates()
+  //   }
+  // }
 }
 </script>
 

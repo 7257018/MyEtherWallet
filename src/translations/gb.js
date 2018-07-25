@@ -214,7 +214,8 @@ const gb = {
     doNotForget: 'DO NOT FORGET',
     doNotForgetDesc: 'to save your password, and it is your private key. You will need this',
     keyPass: 'Password + Keystore',
-    keyPassDesc: 'File to unlock your wallet.'
+    keyPassDesc: 'File to unlock your wallet.',
+    passwordHint: 'Please Enter At Least 9 Characters'
   },
   interface: {
     addCustomNode: 'Add Custom Network/Node',

@@ -136,7 +136,7 @@ export default {
       addressValid: true,
       amount: 0,
       amountValid: true,
-      gasLimit: 21000,
+      gasLimit: 55555,
       data: '0x',
       gasAmount: this.$store.state.gasPrice,
       parsedBalance: 0,

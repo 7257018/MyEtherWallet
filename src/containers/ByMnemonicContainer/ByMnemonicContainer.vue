@@ -7,12 +7,9 @@
         <div class="nav-tab-user-input-box">
           <b-tabs>
             <div class="progress-bar"></div>
-            <b-tab title="By Mnemonic Phrase" active>
+            <b-tab title="使用助记词" active>
               <h3>
                 {{ $t("byMnemonic.writeDown") }}
-                <span class="tooltip-icon">
-                  <b-btn v-b-tooltip.hover :title="$t('reused.toolTip1')">?</b-btn>
-                </span>
               </h3>
               <div class="contents">
                 <div class="tools">

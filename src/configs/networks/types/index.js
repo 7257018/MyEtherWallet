@@ -1,6 +1,7 @@
 import ETH from './ETH.js'
-import Ropsten from './Ropsten.js'
+import DDW from './DDW.js'
+
 export {
   ETH,
-  Ropsten
+  DDW
 }

@@ -1,10 +1,10 @@
 import {
-  Ropsten
+  DDW
 } from '../types'
 export default {
-  type: Ropsten,
-  service: 'myetherwallet.com',
-  url: 'https://api.myetherwallet.com/rop',
+  type: DDW,
+  service: 'ttl.kim',
+  url: 'https://rpc.ttl.kim',
   port: 443,
   auth: false,
   username: '',
