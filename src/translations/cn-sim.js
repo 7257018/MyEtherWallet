@@ -89,7 +89,7 @@ const cnSim = {
     privKeyandPass: 'Private Keys And Passwords'
   },
   social: {
-    title: 'Get Involved',
+    title: '联系我们',
     subheading: 'Your Cryptocurrency Masters Are Getting Hilariously Rich.'
   },
   promo: {

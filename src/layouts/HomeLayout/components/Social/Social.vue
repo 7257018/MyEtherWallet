@@ -43,7 +43,7 @@ export default {
         },
         {
           img: github,
-          to: 'https://www.github.com/myetherwallet',
+          to: 'https://github.com/WrBug/MyEtherWallet',
           name: 'github'
         }
       ]
