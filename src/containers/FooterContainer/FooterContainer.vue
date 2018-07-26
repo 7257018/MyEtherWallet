@@ -28,15 +28,15 @@
             <div class="content-links">
               <p>{{ $t("footer.welcomeDes") }}</p>
 
-              <a href="https://blockchain.info/address/1DECAF2uSpFTP4L1fAHR8GCLrPqdwdLse9" target="_blank">
-                <p class="crypto-link" data-btc="1DECAF2uSpFTP4L1fAHR8GCLrPqdwdLse9">
+              <a href="https://blockchain.info/address/3P7iY9krS82pEmB9r7peWThMSnJBfmeTjW" target="_blank">
+                <p class="crypto-link" data-btc="3P7iY9krS82pEmB9r7peWThMSnJBfmeTjW">
                   <img src="~@/assets/images/icons/btc.svg">
                   &nbsp;Bitcoin Donation
                 </p>
               </a>
 
-              <a href="https://etherscan.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D" target="_blank">
-                <p class="crypto-link" data-eth="0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D">
+              <a href="https://etherscan.io/address/0x502cb486a86068f3de87a4221ceb983d984ccccc" target="_blank">
+                <p class="crypto-link" data-eth="0x502cb486a86068f3de87a4221ceb983d984ccccc">
                   <img src="~@/assets/images/icons/eth.svg">
                   &nbsp;Ethereum Donation
                 </p>
@@ -46,9 +46,6 @@
           </div>
         </div>
         <div class="flex-space-between foot-note">
-          <div class="links">
-            <router-link v-for="(link, index) in lowerLinks" :key="link.title + index" :to="link.to"><span>{{ link.title }}</span></router-link>
-          </div>
           <div class="copyright">
             <p>
               {{ $t("footer.copyright") }}
@@ -161,32 +158,8 @@ export default {
       ],
       links: [
         {
-          to: 'https://www.facebook.com/myetherwallet',
-          class: 'fa-facebook'
-        },
-        {
-          to: 'https://www.twitter.com/@myetherwallet',
-          class: 'fa-twitter'
-        },
-        {
-          to: 'https://www.instagram.com/myetherwallet',
-          class: 'fa-instagram'
-        },
-        {
-          to: 'https://www.linkedin.com/company/myetherwallet',
-          class: 'fa-linkedin'
-        },
-        {
-          to: 'https://www.github.com/myetherwallet',
+          to: 'https://github.com/WrBug/MyEtherWallet',
           class: 'fa-github'
-        },
-        {
-          to: 'https://www.reddit.com/r/myetherwallet',
-          class: 'fa-reddit-alien'
-        },
-        {
-          to: 'https://www.medium.com/@myetherwallet',
-          class: 'fa-medium'
         }
       ]
     }

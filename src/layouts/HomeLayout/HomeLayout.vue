@@ -3,16 +3,14 @@
     <top-banner></top-banner>
     <about></about>
     <faqs></faqs>
-    <news v-show="online"></news>
     <social></social>
-    <promo></promo>
   </div>
 </template>
 
 <script>
 import AboutContainer from '@/containers/AboutContainer'
 import FaqsContainer from '@/containers/FaqsContainer'
-import NewsContainer from '@/containers/NewsContainer'
+// import NewsContainer from '@/containers/NewsContainer'
 import Promo from './components/Promo'
 import Social from './components/Social'
 import TopBanner from './components/TopBanner'
@@ -23,7 +21,6 @@ export default {
     'top-banner': TopBanner,
     'about': AboutContainer,
     'faqs': FaqsContainer,
-    'news': NewsContainer,
     'social': Social,
     'promo': Promo
   },

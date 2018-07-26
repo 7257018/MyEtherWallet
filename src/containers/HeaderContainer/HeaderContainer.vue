@@ -15,7 +15,6 @@
                 <b-nav-item to="/" exact @click="scrollTop()"> {{ $t("header.home") }} </b-nav-item>
                 <b-nav-item to="/#about-mew">{{ $t("header.about") }}</b-nav-item>
                 <b-nav-item to="/#faqs">{{ $t("reused.faqs") }}</b-nav-item>
-                <b-nav-item to="/#news" v-show="online">{{ $t("reused.news") }}</b-nav-item>
 
                 <div class="language-menu-container">
                   <div class="arrows">

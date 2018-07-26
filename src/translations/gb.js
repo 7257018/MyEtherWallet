@@ -115,7 +115,7 @@ const gb = {
     welcomeDes: 'Your donation will help us a lot to build our MEW Community.',
     feedback: 'Feedback',
     privacy: 'Privacy',
-    copyright: 'Copyright 2018 All right reserved by MyEtherWallet, Inc.'
+    copyright: 'Copyright 2018 All right reserved by Bihe, Inc.'
   },
   privacyPol: {
     title: 'Privacy Policy',

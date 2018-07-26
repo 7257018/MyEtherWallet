@@ -54,7 +54,7 @@ const cnSim = {
   },
   home: {
     title1: '币合钱包',
-    title2: '安全的网页钱包',
+    title2: '安全开源的网页钱包',
     subheading: '币合钱包帮助你生成以太坊钱包，并且能安全的与区块链网络交互',
     obtainAddress: '获取以太坊地址并且生成你的私钥，你需要保存好生成的地址',
     getStarted: '开始',
@@ -92,8 +92,8 @@ const cnSim = {
     subheading: 'Your Cryptocurrency Masters Are Getting Hilariously Rich.'
   },
   promo: {
-    title1: 'Your Security',
-    title2: 'Ethereum Wallet.'
+    title1: '安全的',
+    title2: '网页钱包'
   },
   footer: {
     discover: 'Discover',
@@ -115,7 +115,7 @@ const cnSim = {
     welcomeDes: 'Your donation will help us a lot to build our MEW Community.',
     feedback: 'Feedback',
     privacy: 'Privacy',
-    copyright: 'Copyright 2018 All right reserved by MyEtherWallet, Inc.'
+    copyright: 'Copyright 2018 All right reserved by 币合区块链'
   },
   privacyPol: {
     title: 'Privacy Policy',
@@ -167,13 +167,13 @@ const cnSim = {
     alreadyHave: '已有钱包?'
   },
   pageFooter: {
-    title: 'Learn more about Blockchain or MEW? Please go to'
+    title: '想了解更多? 点击进入'
   },
   unlockWallet: {
     jsonFDesc: 'Update ordrop your keystore file here',
-    mnemonicPDesc: 'Enter your 12-bit or 14-bit mnemonic phrases',
-    metamaskDes: 'Use extention to unlock your wallet',
-    privKeyDesc: 'Enter your private key to unlock wallet'
+    mnemonicPDesc: '输入您的助记词',
+    metamaskDes: '使用metamask解锁钱包',
+    privKeyDesc: '输入私钥解锁钱包'
   },
   accessMyWalletOptions: {
     hdDerivationPath: 'HD Derivation Path',
@@ -194,7 +194,7 @@ const cnSim = {
     dontLoseTitle: '不要丢失',
     dontLoseDesc: '请注意，一但丢失，将无法恢复',
     dontShareTitle: '不要分享给别人',
-    dontShareDesc: 'Your funds will be stolen if you use this file on a malicious phishing site.',
+    dontShareDesc: '请不要分享该文件给别人，否则资产可能会被盗窃',
     makeBackupTitle: '开始备份',
     makeBackupDesc: 'Secure it like the millions of dollars it may one day be worth.',
     downloadKeyFile: '下载Keystore文件'
@@ -226,7 +226,7 @@ const cnSim = {
     learnMore: '了解更多',
     httpBasicAccess: 'HTTP Basic Access Athentication',
     tokens: 'Tokens',
-    customToken: 'Custom Tokens',
+    customToken: '自定义 Tokens',
     dataGas: 'Data & Gas Limited',
     sendTx: '发送交易',
     haveIssues: '有问题?',

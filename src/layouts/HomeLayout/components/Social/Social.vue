@@ -23,28 +23,23 @@
 
 <script>
 import github from '@/assets/images/icons/github.png'
-import telegram from '@/assets/images/icons/telegram.png'
-import reddit from '@/assets/images/icons/reddit.png'
-import slack from '@/assets/images/icons/slack.png'
+import bbs from '@/assets/images/icons/bbs.png'
+import qq from '@/assets/images/icons/qq.png'
+// import slack from '@/assets/images/icons/slack.png'
 
 export default {
   data () {
     return {
       links: [
         {
-          img: telegram,
-          to: 'https://www.google.com',
-          name: 'telegram'
+          img: qq,
+          to: 'https://jq.qq.com/?_wv=1027&k=5vG4FaC',
+          name: 'QQ'
         },
         {
-          img: slack,
-          to: 'https://www.google.com',
-          name: 'slack'
-        },
-        {
-          img: reddit,
-          to: 'https://www.reddit.com/r/myetherwallet',
-          name: 'reddit'
+          img: bbs,
+          to: 'https://bbs.bihe.one',
+          name: 'BBS'
         },
         {
           img: github,
