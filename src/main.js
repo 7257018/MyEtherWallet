@@ -32,8 +32,8 @@ Vue.use(BootstrapVue)
 // Define vue-i18n
 Vue.use(VueI18n)
 const i18n = new VueI18n({
-  locale: 'gb',
-  fallbackLocale: 'gb',
+  locale: 'cn-sim',
+  fallbackLocale: 'cn-sim',
   messages: languages,
   silentTranslationWarn: true
 })

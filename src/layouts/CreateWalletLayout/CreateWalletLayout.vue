@@ -7,12 +7,12 @@
         <div class="nav-tab-user-input-box" v-show="!byJson && !byMnemonic">
           <b-tabs class="x100">
             <div class="progress-bar"></div>
-            <b-tab title="使用助记词">
+            <b-tab title="使用助记词" active>
               <h3>{{ $t("createWallet.yourPw") }}</h3>
               <create-wallet-input v-model='password' :switcher="switcher" :param="'Mnemonic'"></create-wallet-input>
               <create-wallet-input-footer></create-wallet-input-footer>
             </b-tab>
-            <b-tab title="使用Keystore" active>
+            <b-tab title="使用Keystore" >
               <h3>{{ $t("createWallet.yourPw") }}</h3>
               <create-wallet-input v-model='password' :switcher="switcher" :param="'Json'"></create-wallet-input>
               <create-wallet-input-footer></create-wallet-input-footer>

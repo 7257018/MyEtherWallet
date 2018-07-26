@@ -56,7 +56,7 @@ const cnSim = {
     subheading: '币合钱包帮助你生成以太坊钱包，并且能安全的与区块链网络交互',
     obtainAddress: '获取以太坊地址并且生成你的私钥，你需要保存好生成的地址',
     getStarted: '开始',
-    accessMyWalletDesc: '发送交易，发布智能合约',
+    accessMyWalletDesc: '发送交易，查询地址信息,查询交易记录，发布智能合约',
     accessNow: '进入'
   },
   about: {
@@ -206,28 +206,28 @@ const cnSim = {
     alreadyWritten: '下一步'
   },
   createWallet: {
-    title: 'Welcome to MEW',
+    title: '欢迎使用币合钱包',
     subheading: 'MyEtherWallet.com doesn\'t hold your keys for you. We can’t access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys & always check that you are on CORRECT URL. You are responsible for your security.',
-    firstTime: 'I\'m a Fresher',
-    veteran: 'I\'m Experienced',
+    firstTime: '我是新手',
+    veteran: '大神，你懂吗',
     yourPw: '输入钱包密码',
-    doNotForget: '不要忘记',
-    doNotForgetDesc: '保存你的密码， 这是你个人秘钥，你需要用',
+    doNotForget: '务必',
+    doNotForgetDesc: '保存好你的密码， 这是你个人秘钥，你需要用',
     keyPass: '密码 + Keystore',
     keyPassDesc: '文件来解锁你的账户',
-    passwordHint: '输入密码'
+    passwordHint: '输入钱包密码'
   },
   interface: {
     addCustomNode: '添加自定义节点',
     save: '保存',
     dontKnow: 'Don\'t know what it is?',
-    learnMore: 'Learn more',
+    learnMore: '了解更多',
     httpBasicAccess: 'HTTP Basic Access Athentication',
     tokens: 'Tokens',
     customToken: 'Custom Tokens',
     dataGas: 'Data & Gas Limited',
-    sendTx: 'Send Transaction',
-    haveIssues: 'Have any issues?',
+    sendTx: '发送交易',
+    haveIssues: '有问题?',
     registerDns: 'Register Domain - ENS',
     registerDnsDesc: 'DomainSale is a secondary market for the Ethereum Name Service that allows you to buy and sell domains that are already owned.',
     checkDomain: 'Check Domain',
@@ -244,10 +244,17 @@ const cnSim = {
     domSale: 'Domain Sale',
     domSaleDesc: 'DomainSale is a secondary market for the Ethereum Name Service that allows you to buy and sell domains that are already owned.',
     domSaleBal: 'Domain Sale Balance',
-    readWriteC: 'Read / Write Contract',
-    read: 'Read',
-    contractAddr: 'Contract Address',
+    readWriteC: '查看合约',
+    read: '阅读',
+    contractAddr: '合约地址',
     abiJsonInt: 'ABI/JSON Interface'
+  },
+  strength: {
+    title: '密码强度：',
+    veryWeak: '非常弱',
+    weak: '弱',
+    strong: '强',
+    veryStrong: '非常强'
   }
 }
 

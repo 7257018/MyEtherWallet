@@ -41,7 +41,7 @@
                 </b-nav-item>
                 <b-nav-item to="/create-wallet" v-if="wallet === null">
                   <div class="get-free-wallet">
-                    Get a Free Wallet
+                    {{ $t("reused.getAFreeWallet") }}
                  </div>
                 </b-nav-item>
                 <b-nav-item-dropdown right no-caret v-if="wallet !== null" extra-toggle-classes="identicon-dropdown">

@@ -215,7 +215,7 @@ const gb = {
     doNotForgetDesc: 'to save your password, and it is your private key. You will need this',
     keyPass: 'Password + Keystore',
     keyPassDesc: 'File to unlock your wallet.',
-    passwordHint: 'Please Enter At Least 9 Characters'
+    passwordHint: 'Please Enter At Least 8 Characters'
   },
   interface: {
     addCustomNode: 'Add Custom Network/Node',
@@ -248,6 +248,13 @@ const gb = {
     read: 'Read',
     contractAddr: 'Contract Address',
     abiJsonInt: 'ABI/JSON Interface'
+  },
+  strength: {
+    title: 'Password strength:',
+    veryWeak: 'Very Weak',
+    weak: 'Weak',
+    strong: 'Strong',
+    veryStrong: 'Very Strong'
   }
 }
 export default gb
