@@ -7,6 +7,8 @@ const gb = {
     swap: 'Swap',
     unlockWallet: 'Unlock Wallet',
     createWallet: 'Create Wallet',
+    useMnemonic: 'By Mnemonic Phrase',
+    useKeystore: 'By JSON File',
     customerSupport: 'Customer Support',
     address: 'Address',
     balance: 'Balance',

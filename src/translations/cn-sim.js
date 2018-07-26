@@ -7,6 +7,8 @@ const cnSim = {
     swap: 'Swap',
     unlockWallet: '解锁钱包',
     createWallet: '创建钱包',
+    useMnemonic: '创建助记词',
+    useKeystore: '创建Keystore',
     customerSupport: '帮助支持',
     address: '地址',
     balance: '余额',

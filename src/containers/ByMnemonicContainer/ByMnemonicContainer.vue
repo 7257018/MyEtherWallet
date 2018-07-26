@@ -1,13 +1,14 @@
 <template>
   <div class="create-wallet-by-mnemonic">
     <finish-modal></finish-modal>
-    <verification-modal :mnemonicValues="mnemonicValues" :mnemonicDoneModalOpen="mnemonicDoneModalOpen"></verification-modal>
+    <verification-modal :mnemonicValues="mnemonicValues"
+                        :mnemonicDoneModalOpen="mnemonicDoneModalOpen"></verification-modal>
     <div class="wrap">
       <div class="page-container">
         <div class="nav-tab-user-input-box">
           <b-tabs>
             <div class="progress-bar"></div>
-            <b-tab title="使用助记词" active>
+            <b-tab v-bind:title="title" active>
               <h3>
                 {{ $t("byMnemonic.writeDown") }}
               </h3>
@@ -41,7 +42,8 @@
                 </div>
               </div>
               <div class="user-input">
-                <div v-on:click="mnemonicVerificationModalOpen" class="next-button large-round-button-green-filled clickable">
+                <div v-on:click="mnemonicVerificationModalOpen"
+                     class="next-button large-round-button-green-filled clickable">
                   {{ $t("byMnemonic.alreadyWritten") }}
                 </div>
               </div>
@@ -79,7 +81,8 @@ export default {
     return {
       varificationValues: [],
       mnemonicValues: [],
-      mnemonic24: false
+      mnemonic24: false,
+      title: this.$t('reused.useMnemonic')
     }
   },
   methods: {

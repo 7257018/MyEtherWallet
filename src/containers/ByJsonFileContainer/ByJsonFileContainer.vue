@@ -1,12 +1,13 @@
 <template>
   <div class="create-wallet-by-json-file">
-    <success-modal message="You have created a wallet successfully" linkTo="/interface" linkMessage="Access My Wallet"></success-modal>
+    <success-modal message="You have created a wallet successfully" linkTo="/interface"
+                   linkMessage="Access My Wallet"></success-modal>
     <div class="wrap">
       <div class="page-container">
         <div class="nav-tab-user-input-box">
           <b-tabs>
             <div class="progress-bar"></div>
-            <b-tab title="By JSON File" active>
+            <b-tab v-bind:title="title" active>
               <h3>
                 {{ $t('byJsonFile.saveKeystore')}}
                 <span class="tooltip-icon">
@@ -18,7 +19,8 @@
                                :desc="content.desc" :key="content.title"></by-json-block>
               </div>
               <div class="user-input">
-                <a :href="walletJson" :class="[{disable: !downloadable} ,'next-button', 'large-round-button-green-filled']"
+                <a :href="walletJson"
+                   :class="[{disable: !downloadable} ,'next-button', 'large-round-button-green-filled']"
                    :download="name">
                   <span v-if="downloadable"> {{ $t('byJsonFile.downloadKeyFile')}} </span>
                   <div v-if="!downloadable">
@@ -82,7 +84,8 @@ export default {
       ],
       downloadable: false,
       walletJson: '',
-      name: ''
+      name: '',
+      title: this.$t('reused.useKeystore')
     }
   },
   mounted () {

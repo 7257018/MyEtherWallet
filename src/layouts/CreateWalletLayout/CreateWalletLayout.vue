@@ -7,12 +7,12 @@
         <div class="nav-tab-user-input-box" v-show="!byJson && !byMnemonic">
           <b-tabs class="x100">
             <div class="progress-bar"></div>
-            <b-tab title="使用助记词" active>
+            <b-tab v-bind:title="useMnemonic" active>
               <h3>{{ $t("createWallet.yourPw") }}</h3>
               <create-wallet-input v-model='password' :switcher="switcher" :param="'Mnemonic'"></create-wallet-input>
               <create-wallet-input-footer></create-wallet-input-footer>
             </b-tab>
-            <b-tab title="使用Keystore" >
+            <b-tab v-bind:title="useKeystore">
               <h3>{{ $t("createWallet.yourPw") }}</h3>
               <create-wallet-input v-model='password' :switcher="switcher" :param="'Json'"></create-wallet-input>
               <create-wallet-input-footer></create-wallet-input-footer>
@@ -53,7 +53,9 @@ export default {
     return {
       byJson: false,
       byMnemonic: false,
-      password: ''
+      password: '',
+      useMnemonic: this.$t('reused.useMnemonic'),
+      useKeystore: this.$t('reused.useKeystore')
     }
   },
   methods: {
