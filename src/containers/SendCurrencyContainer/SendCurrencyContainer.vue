@@ -57,7 +57,7 @@
               </b-popover>
             </div>
           </div>
-          <p>{{ $t("reused.txFee") }}: {{ transactionFee }} ETH </p>
+          <p>{{ $t("reused.txFee") }}: {{ transactionFee }}  </p>
         </div>
         <div class="buttons">
           <div :class="[$store.state.gasPrice === 5 ? 'active': '', 'small-circle-button-green-border']" @click="changeGas(5)">
@@ -124,7 +124,7 @@ import Blockie from '@/components/Blockie'
 const unit = require('ethjs-unit')
 
 export default {
-  props: ['address'],
+  props: ['address', 'balance'],
   components: {
     'interface-bottom-text': InterfaceBottomText,
     'confirm-modal': ConfirmModal,
@@ -136,10 +136,10 @@ export default {
       addressValid: true,
       amount: 0,
       amountValid: true,
-      gasLimit: 55555,
+      gasLimit: 98764,
       data: '0x',
       gasAmount: this.$store.state.gasPrice,
-      parsedBalance: 0,
+      parsedBalance: this.balance,
       toAddress: '',
       transactionFee: 0,
       coinType: [

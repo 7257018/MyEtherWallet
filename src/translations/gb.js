@@ -5,6 +5,7 @@ const gb = {
     faqs: 'FAQs',
     sendTx: 'Send ETH & Tokens',
     swap: 'Swap',
+    confirmSend: 'Confirm and Send',
     unlockWallet: 'Unlock Wallet',
     createWallet: 'Create Wallet',
     useMnemonic: 'By Mnemonic Phrase',

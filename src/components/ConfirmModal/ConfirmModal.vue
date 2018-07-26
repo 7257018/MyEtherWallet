@@ -1,6 +1,7 @@
 <template>
   <div class="modal-container">
-    <b-modal ref="confirmation" hide-footer centered class="bootstrap-modal-wide confirmation-modal nopadding" title="Confirmation">
+    <b-modal ref="confirmation" hide-footer centered class="bootstrap-modal-wide confirmation-modal nopadding"
+             title="Confirmation">
       <div class="modal-content qrcode-modal">
         <div class="tx-info">
           <div class="tx-data tx-from">
@@ -35,22 +36,28 @@
           </div>
           <div class="expended-info" v-if="modalDetailInformation">
             <div class="grid-block">
-              <p>Network</p><p>{{$store.state.network.type.name}} by {{$store.state.network.service}}</p>
+              <p>{{$t('txNetwork.title')}}</p>
+              <p>{{$store.state.network.type.name}} by {{$store.state.network.service}}</p>
             </div>
             <div class="grid-block">
-              <p>Gas Limit</p><p>{{gasLimit}} wei</p>
+              <p>Gas Limit</p>
+              <p>{{gasLimit}}</p>
             </div>
             <div class="grid-block">
-              <p>Gas Price</p><p>{{ gas }} gwei</p>
+              <p>Gas Price</p>
+              <p>{{ gas }} gwei</p>
             </div>
             <div class="grid-block">
-              <p>Transaction Fee</p><p> {{fee}} ETH</p>
+              <p>Transaction Fee</p>
+              <p> {{fee}}</p>
             </div>
             <div class="grid-block">
-              <p>Nonce</p><p>{{nonce}}</p>
+              <p>Nonce</p>
+              <p>{{nonce}}</p>
             </div>
             <div class="grid-block">
-              <p>Data</p><p>{{data}}</p>
+              <p>Data</p>
+              <p>{{data}}</p>
             </div>
           </div>
         </div>
@@ -59,25 +66,25 @@
           <div class="flex-center-align">
             <div class="button-with-helper">
               <div class="submit-button large-round-button-green-filled clickable" v-on:click="successModalOpen">
-                Confirm and Send
+                {{$t('reused.confirmSend')}}
               </div>
-              <div class="tooltip-box-2">
-                <b-btn id="exPopover9">
-                  <img class="icon" src="~@/assets/images/icons/qr-code.svg">
-                </b-btn>
-                <b-popover target="exPopover9" triggers="hover focus" placement="top">
-                  <div class="qrcode-contents">
-                    <p class="qrcode-title">Scan QR code to send/swap instantly</p>
-                    <div class="qrcode-block">
-                      <qrcode value="Hello, World!" :options="{ size: 100 }"></qrcode>
-                    </div>
-                    <p class="qrcode-helper">What is that?</p>
-                  </div>
-                </b-popover>
-              </div>
+              <!--<div class="tooltip-box-2">-->
+              <!--<b-btn id="exPopover9">-->
+              <!--<img class="icon" src="~@/assets/images/icons/qr-code.svg">-->
+              <!--</b-btn>-->
+              <!--<b-popover target="exPopover9" triggers="hover focus" placement="top">-->
+              <!--<div class="qrcode-contents">-->
+              <!--<p class="qrcode-title">Scan QR code to send/swap instantly</p>-->
+              <!--<div class="qrcode-block">-->
+              <!--<qrcode value="Hello, World!" :options="{ size: 100 }"></qrcode>-->
+              <!--</div>-->
+              <!--<p class="qrcode-helper">What is that?</p>-->
+              <!--</div>-->
+              <!--</b-popover>-->
+              <!--</div>-->
             </div>
           </div>
-          <p class="learn-more">Have any issues? <a href="/">Learn more</a></p>
+          <!--<p class="learn-more">Have any issues? <a href="/">Learn more</a></p>-->
         </div>
       </div>
     </b-modal>
@@ -86,9 +93,9 @@
 
 <script>
 // eslint-disable-next-line
-import SuccessModal from '@/components/SuccessModal'
+  import SuccessModal from '@/components/SuccessModal'
 // eslint-disable-next-line
-const unit = require('ethjs-unit')
+  const unit = require('ethjs-unit')
 
 export default {
   props: ['fee', 'data', 'from', 'gas', 'gasLimit', 'nonce', 'to', 'value'],
@@ -106,5 +113,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "ConfirmModal.scss";
+  @import "ConfirmModal.scss";
 </style>
