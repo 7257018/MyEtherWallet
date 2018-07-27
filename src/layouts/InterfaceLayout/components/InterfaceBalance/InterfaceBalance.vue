@@ -1,18 +1,17 @@
 <template>
-  <div class="transaction-info-blocks">
+  <div>
     <interface-balance-modal :balance="parsedBalance"></interface-balance-modal>
-    <div v-on:click="balanceModalOpen" class="wrap">
+    <div v-on:click="balanceModalOpen">
       <div class="info-block balance">
         <div class="block-image">
           <img class="icon" src="~@/assets/images/icons/balance.svg">
         </div>
         <div class="block-content">
           <h2>{{ $t("reused.balance")}}</h2>
-          <h4 v-show="balance.result !== undefined"> {{ parsedBalance }} ETH</h4>
+          <div v-show="balance.result !== undefined" class="balance-text"> <p>{{ parsedBalance }}</p> <p>&nbsp;ETH</p></div>
           <i class="fa fa-spin fa-spinner" v-show="balance.result === undefined"> </i>
           <div class="icon-container">
             <img src="~@/assets/images/icons/more.svg">
-            <!-- <p class="bottom-button">{{ $t("txBalance.detail")}} <i class="fa fa-chevron-right" aria-hidden="true"></i></p> -->
           </div>
         </div>
       </div>
