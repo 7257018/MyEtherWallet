@@ -7,26 +7,33 @@
         <div class="amount">
           <div class="title">
             <h4>Amount</h4>
-             <p v-on:click="setBalanceToAmt" class="title-button prevent-user-select">Entire Balance</p>
+            <p v-on:click="setBalanceToAmt" class="title-button prevent-user-select">Entire Balance</p>
           </div>
-          <currency-picker :currency="tokensWithBalance" v-on:selectedCurrency="setSelectedCurrency" :page="'sendEthAndTokens'" :token="true"></currency-picker>
+          <currency-picker :currency="tokensWithBalance" v-on:selectedCurrency="setSelectedCurrency"
+                           :page="'sendEthAndTokens'" :token="true"></currency-picker>
           <div class="the-form amount-number">
             <input type="number" name="" v-model="amount" placeholder="Amount">
-            <i :class="[selectedCurrency.name === 'Ether' ? parsedBalance < amount ? 'not-good': '' : selectedCurrency.balance < amount ? 'not-good': '','fa fa-check-circle good-button']" aria-hidden="true"></i>
+            <i
+              :class="[selectedCurrency.name === 'Ether' ? parsedBalance < amount ? 'not-good': '' : selectedCurrency.balance < amount ? 'not-good': '','fa fa-check-circle good-button']"
+              aria-hidden="true"></i>
           </div>
-          <div class="error-message-container" v-if="selectedCurrency.name === 'Ether' ? amount > parsedBalance : selectedCurrency.balance < amount">
+          <div class="error-message-container"
+               v-if="selectedCurrency.name === 'Ether' ? amount > parsedBalance : selectedCurrency.balance < amount">
             <p>{{ $t('reused.dontHaveEnough') }}</p>
           </div>
         </div>
         <div class="to-address">
           <div class="title">
             <h4>{{ $t("sendTx.toAddr") }}</h4> &nbsp;
-            <blockie :address="toAddress" width="22px" height="22px" v-show="addressValid && toAddress.length !== 0"></blockie>
-            <p class="copy-button prevent-user-select" v-on:click="copyToClipboard('address')">{{ $t('reused.copy') }}</p>
+            <blockie :address="toAddress" width="22px" height="22px"
+                     v-show="addressValid && toAddress.length !== 0"></blockie>
+            <p class="copy-button prevent-user-select" v-on:click="copyToClipboard('address')">{{ $t('reused.copy')
+              }}</p>
           </div>
           <div class="the-form address-block">
             <textarea ref="address" name="name" v-model="toAddress"></textarea>
-            <i :class="[addressValid && toAddress.length !== 0 ? '':'not-good', 'fa fa-check-circle good-button']" aria-hidden="true"></i>
+            <i :class="[addressValid && toAddress.length !== 0 ? '':'not-good', 'fa fa-check-circle good-button']"
+               aria-hidden="true"></i>
           </div>
           <div class="error-message-container">
             <p v-if="toAddress.length === 0 && toAddress === ''">Can't be empty</p>
@@ -46,22 +53,28 @@
               <b-popover target="exPopover1" triggers="hover focus" placement="top">
                 <template slot="title">MetaMask</template>
                 <img class="icon" src="~@/assets/images/icons/button-metamask.svg">
-                MetaMask is a <strong>bridge</strong> that allows you to visit the distributed web of tomorrow in your browser today.
-                It allows you to <strong>run Ethereum dApps right in your browser without running a full Ethereum node.</strong>
-                MetaMask includes a secure identity vault, providing a user interface to manage your identities on different sites and sign blockchain transactions.
+                MetaMask is a <strong>bridge</strong> that allows you to visit the distributed web of tomorrow in your
+                browser today.
+                It allows you to <strong>run Ethereum dApps right in your browser without running a full Ethereum
+                node.</strong>
+                MetaMask includes a secure identity vault, providing a user interface to manage your identities on
+                different sites and sign blockchain transactions.
               </b-popover>
             </div>
           </div>
-          <p>{{ $t("reused.txFee") }}: {{ transactionFee }}  </p>
+          <p>{{ $t("reused.txFee") }}: {{ transactionFee }} </p>
         </div>
         <div class="buttons">
-          <div :class="[$store.state.gasPrice === 5 ? 'active': '', 'small-circle-button-green-border']" @click="changeGas(5)">
+          <div :class="[$store.state.gasPrice === 5 ? 'active': '', 'small-circle-button-green-border']"
+               @click="changeGas(5)">
             {{ $t('reused.slow') }}
           </div>
-          <div :class="[$store.state.gasPrice === 45 ? 'active': '', 'small-circle-button-green-border']" @click="changeGas(45)">
+          <div :class="[$store.state.gasPrice === 45 ? 'active': '', 'small-circle-button-green-border']"
+               @click="changeGas(45)">
             {{ $t('reused.regular') }}
           </div>
-          <div :class="[$store.state.gasPrice === 75 ? 'active': '', 'small-circle-button-green-border']" @click="changeGas(75)">
+          <div :class="[$store.state.gasPrice === 75 ? 'active': '', 'small-circle-button-green-border']"
+               @click="changeGas(75)">
             {{ $t('reused.fast') }}
           </div>
         </div>
@@ -101,18 +114,23 @@
     </div>
 
     <div class="submit-button-container">
-      <div :class="[addressValid && toAddress.length !== 0? '': 'disabled','submit-button large-round-button-green-filled']" @click="confirmationModalOpen">
+      <div
+        :class="[addressValid && toAddress.length !== 0? '': 'disabled','submit-button large-round-button-green-filled']"
+        @click="confirmationModalOpen">
         {{ $t('interface.sendTx') }}
       </div>
-      <interface-bottom-text link="/" :linkText="$t('interface.learnMore')" :question="$t('interface.haveIssues')"></interface-bottom-text>
+      <interface-bottom-text link="/" :linkText="$t('interface.learnMore')"
+                             :question="$t('interface.haveIssues')"></interface-bottom-text>
     </div>
-    <confirm-modal :showSuccess="showSuccessModal" :signedTx="signedTx" :fee="transactionFee" :gasPrice="$store.state.gasPrice" :from="$store.state.wallet.getAddressString()" :to="toAddress" :value="amount" :gas="gasLimit" :data="data" :nonce="$store.state.account.nonce + 1"></confirm-modal>
-    <success-modal message="Sending Transaction" linkMessage="Close"></success-modal>
+    <confirm-modal :showSuccess="showSuccessModal" :signedTx="signedTx" :fee="transactionFee"
+                   :gasPrice="$store.state.gasPrice" :from="$store.state.wallet.getAddressString()" :to="toAddress"
+                   :value="amount" :gas="gasLimit" :data="data" :nonce="$store.state.account.nonce + 1"></confirm-modal>
+    <success-modal v-bind:message="sendingMessage" v-bind:linkMessage="closeBtn"></success-modal>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import {mapGetters} from 'vuex'
 
 import InterfaceContainerTitle from '../../components/InterfaceContainerTitle'
 import CurrencyPicker from '../../components/CurrencyPicker'
@@ -122,9 +140,9 @@ import Blockie from '@/components/Blockie'
 import SuccessModal from '@/components/SuccessModal'
 
 // eslint-disable-next-line
-const EthTx = require('ethereumjs-tx')
+  const EthTx = require('ethereumjs-tx')
 // eslint-disable-next-line
-const unit = require('ethjs-unit')
+  const unit = require('ethjs-unit')
 
 export default {
   props: ['address', 'tokensWithBalance'],
@@ -137,7 +155,12 @@ export default {
     'success-modal': SuccessModal
   },
   data () {
+    let type = this.$store.state.network.type
     return {
+      sendingMessage: this.$t('dialog.sendingTransaction'),
+      closeBtn: this.$t('dialog.closeButton'),
+      txHash: '',
+      txError: '',
       advancedExpend: false,
       addressValid: true,
       amount: 0,
@@ -148,7 +171,11 @@ export default {
       parsedBalance: 0,
       toAddress: '',
       transactionFee: 0,
-      selectedCurrency: {symbol: 'ETH', name: 'Ethereum'},
+      selectedCurrency: {
+        name: type.name,
+        symbol: type.symbol,
+        isMainNet: type.isMainNet
+      },
       raw: {},
       signedTx: ''
     }
@@ -158,14 +185,28 @@ export default {
       this.$refs[ref].select()
       document.execCommand('copy')
     },
-    showSuccessModal () {
+    showSuccessModal (err, txHash) {
+      if (!err) {
+        this.txHash = txHash
+        this.sendingMessage = this.$t('transaction.success')
+      } else {
+        this.txError = err
+        this.sendingMessage = this.$t('transaction.failed')
+      }
       this.$children[6].$refs.success.show()
     },
     createTx () {
       console.log('aaa')
-      const jsonInterface = [{'constant': false, 'inputs': [{'name': '_to', 'type': 'address'}, {'name': '_amount', 'type': 'uint256'}], 'name': 'transfer', 'outputs': [{'name': 'success', 'type': 'bool'}], 'payable': false, 'type': 'function'}]
+      const jsonInterface = [{
+        'constant': false,
+        'inputs': [{'name': '_to', 'type': 'address'}, {'name': '_amount', 'type': 'uint256'}],
+        'name': 'transfer',
+        'outputs': [{'name': 'success', 'type': 'bool'}],
+        'payable': false,
+        'type': 'function'
+      }]
       const contract = new this.$store.state.web3.eth.Contract(jsonInterface)
-      const isEth = this.selectedCurrency.symbol === 'ETH'
+      const isEth = this.selectedCurrency.isMainNet
       this.data = isEth ? this.data : contract.methods.transfer(this.toAddress, this.amount).encodeABI()
 
       this.raw = {
@@ -204,8 +245,15 @@ export default {
     },
     setSelectedCurrency (e) {
       this.selectedCurrency = e
-      if (e.name !== 'Ether') {
-        const jsonInterface = [{'constant': false, 'inputs': [{'name': '_to', 'type': 'address'}, {'name': '_amount', 'type': 'uint256'}], 'name': 'transfer', 'outputs': [{'name': 'success', 'type': 'bool'}], 'payable': false, 'type': 'function'}]
+      if (!e.isMainNet) {
+        const jsonInterface = [{
+          'constant': false,
+          'inputs': [{'name': '_to', 'type': 'address'}, {'name': '_amount', 'type': 'uint256'}],
+          'name': 'transfer',
+          'outputs': [{'name': 'success', 'type': 'bool'}],
+          'payable': false,
+          'type': 'function'
+        }]
         const contract = new this.$store.state.web3.eth.Contract(jsonInterface)
         this.data = contract.methods.transfer(this.toAddress, this.amount).encodeABI()
       } else {
@@ -216,7 +264,7 @@ export default {
       this.createTx()
       this.$store.state.web3.eth.estimateGas(this.raw).then(res => {
         this.transactionFee = unit.fromWei(unit.toWei(this.$store.state.gasPrice, 'gwei') * res, 'ether')
-        this.gasLimit = res
+        this.gasLimit = res + 1
       }).catch(err => console.log(err))
     },
     verifyAddr () {

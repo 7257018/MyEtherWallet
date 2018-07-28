@@ -40,6 +40,10 @@
               <p>{{$store.state.network.type.name}} by {{$store.state.network.service}}</p>
             </div>
             <div class="grid-block">
+              <p>value</p>
+              <p>{{value}}</p>
+            </div>
+            <div class="grid-block">
               <p>Gas Limit</p>
               <p>{{gas}} wei</p>
             </div>
@@ -49,7 +53,7 @@
             </div>
             <div class="grid-block">
               <p>Transaction Fee</p>
-              <p> {{fee}} ETH</p>
+              <p> {{fee}}</p>
             </div>
             <div class="grid-block">
               <p>Nonce</p>
@@ -99,28 +103,60 @@ export default {
   props: ['fee', 'signedTx', 'data', 'from', 'gas', 'gasPrice', 'nonce', 'to', 'value', 'showSuccess'],
   data () {
     return {
-      modalDetailInformation: false
+      modalDetailInformation: true
     }
   },
   methods: {
     sendTx () {
-      this.$store.state.web3.eth.sendSignedTransaction(this.signedTx).on('receipt', receipt => {
-        console.log('receipt', receipt)
-      }).then(res => {
-        console.log('res', res)
+      this.sendTransaction(this.signedTx)
+      // this.$store.state.web3.eth.sendSignedTransaction(this.signedTx)
+      //   .once('transactionHash').then(res => {
+      //   console.log('transactionHash', res)
+      //   this.$store.dispatch('setAccountNonce', this.nonce + 1)
+      //   this.$refs.confirmation.hide()
+      //   this.showSuccess()
+      //   console.log(res)
+      // })
+    },
+    async sendTransaction (signedTx) {
+      const body = {
+        jsonrpc: '2.0',
+        method: 'eth_sendRawTransaction',
+        params: [signedTx],
+        id: 0
+      }
+      const config = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      }
+      this.transactionHash = await fetch(this.$store.state.network.url, config)
+        .then(res => {
+          console.log(res)
+          return res.json()
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      console.log(this.transactionHash)
+      if (this.transactionHash.result != null || this.transactionHash.result !== '') {
         this.$store.dispatch('setAccountNonce', this.nonce + 1)
-        this.$store.dispatch('addNotification', [this.from, res, 'Transaction Receipt'])
-      }).catch(err => {
-        this.$store.dispatch('addNotification', [this.from, err, 'Transaction Error'])
-      })
-
-      this.$refs.confirmation.hide()
-      this.showSuccess()
+        this.$refs.confirmation.hide()
+        this.showSuccess(null, this.transactionHash.result)
+      } else {
+        let err = 'error'
+        if (this.transactionHash.error && this.transactionHash.error.message) {
+          err = this.transactionHash.error.message
+        }
+        this.showSuccess(err, null)
+      }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "ConfirmModal.scss";
+  @import "ConfirmModal.scss";
 </style>

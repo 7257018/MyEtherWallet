@@ -259,6 +259,10 @@ const cnSim = {
     strong: '强',
     veryStrong: '非常强'
   },
+  dialog: {
+    sendingTransaction: '交易请求已发送，请自行检查是否成功',
+    closeButton: '关闭'
+  },
   transaction: {
     success: '交易成功',
     failed: '交易失败'

@@ -5,6 +5,7 @@ export default {
   blockExplorerTX: 'https://etherscan.io/tx/[[txHash]]',
   blockExplorerAddr: 'https://etherscan.io/address/[[address]]',
   chainID: 1,
+  isMainNet: true,
   tokens: [],
   contracts: []
 }

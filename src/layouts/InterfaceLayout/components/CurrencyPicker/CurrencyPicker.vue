@@ -12,8 +12,11 @@
           <i class="fa fa-search"></i>
         </div>
         <div class="item-container">
-          <div v-for="curr in localCurrency" :class="[token ? selectedCurrency.symbol === curr.symbol ? 'selected': '' : selectedCurrency.name === curr.name? 'selected': '','item']" @click="selectCurrency(curr)" :key="token?curr.name+curr.symbol + page: curr.name + page">
-            <p v-show="token">{{ curr.symbol }} <span class="subname">- {{ curr.name }}</span><p>
+          <div v-for="curr in localCurrency"
+               :class="[token ? selectedCurrency.symbol === curr.symbol ? 'selected': '' : selectedCurrency.name === curr.name? 'selected': '','item']"
+               @click="selectCurrency(curr)" :key="token?curr.name+curr.symbol + page: curr.name + page">
+            <p v-show="token">{{ curr.symbol }} <span class="subname">- {{ curr.name }}</span>
+            <p>
             <p v-show="!token">{{ curr.name }}</p>
           </div>
         </div>
@@ -26,9 +29,18 @@
 export default {
   props: ['currency', 'page', 'token'],
   data () {
+    let type = this.$store.state.network.type
     return {
-      localCurrency: this.token === true ? [{name: 'Ether', symbol: 'ETH'}, {name: 'Ayyyyyy Love Me Angel Orangutans', symbol: 'AYLMAO', addr: '0xe22B83879001D43866656D28C64d353F8e6378F1'}] : [{name: 'Select an item'}],
-      selectedCurrency: this.token === true ? {name: 'Ether', symbol: 'ETH'} : {name: 'Select an item'},
+      localCurrency: this.token === true ? [{
+        name: type.name,
+        symbol: type.symbol,
+        isMainNet: type.isMainNet
+      }] : [{name: 'Select an item'}],
+      selectedCurrency: this.token === true ? {
+        name: type.name,
+        symbol: type.symbol,
+        isMainNet: type.isMainNet
+      } : {name: 'Select an item'},
       open: false,
       search: ''
     }
@@ -53,7 +65,11 @@ export default {
     },
     currency (newVal) {
       if (this.token) {
-        this.localCurrency = [{name: 'Ether', symbol: 'ETH'}, {name: 'Ayyyyyy Love Me Angel Orangutans', symbol: 'AYLMAO', addr: '0xe22B83879001D43866656D28C64d353F8e6378F1'}]
+        this.localCurrency = [{name: 'Ether', symbol: 'ETH'}, {
+          name: 'Ayyyyyy Love Me Angel Orangutans',
+          symbol: 'AYLMAO',
+          addr: '0xe22B83879001D43866656D28C64d353F8e6378F1'
+        }]
       } else {
         this.localCurrency = [{name: 'Select an item'}]
       }
@@ -68,7 +84,11 @@ export default {
         })
       } else {
         if (this.token) {
-          this.localCurrency = [{name: 'Ether', symbol: 'ETH'}, {name: 'Ayyyyyy Love Me Angel Orangutans', symbol: 'AYLMAO', addr: '0xe22B83879001D43866656D28C64d353F8e6378F1'}]
+          this.localCurrency = [{name: 'Ether', symbol: 'ETH'}, {
+            name: 'Ayyyyyy Love Me Angel Orangutans',
+            symbol: 'AYLMAO',
+            addr: '0xe22B83879001D43866656D28C64d353F8e6378F1'
+          }]
         } else {
           this.localCurrency = [{name: 'Select an item'}]
         }
@@ -80,5 +100,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "CurrencyPicker.scss";
+  @import "CurrencyPicker.scss";
 </style>

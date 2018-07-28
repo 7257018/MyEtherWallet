@@ -5,6 +5,7 @@ export default {
   blockExplorerTX: 'https://www.ttl.kim/#/tx/[[txHash]]',
   blockExplorerAddr: 'https://www.ttl.kim/#/address/[[address]]',
   chainID: 2048,
+  isMainNet: true,
   tokens: [],
   contracts: []
 }

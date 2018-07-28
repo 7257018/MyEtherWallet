@@ -12,42 +12,42 @@
             <li @click.prevent="switchTabs('send')" :class="selectedTab === 'send'? 'active': ''">
               {{ $t("reused.sendTx") }}
             </li>
-            <li @click.prevent="switchTabs('offline')" :class="selectedTab === 'offline'? 'active': ''">
-              {{ $t("reused.offline") }}
-            </li>
+            <!--<li @click.prevent="switchTabs('offline')" :class="selectedTab === 'offline'? 'active': ''">-->
+              <!--{{ $t("reused.offline") }}-->
+            <!--</li>-->
           </ul>
         </li>
-        <li @click.prevent="switchTabs('swap')" >
-          <div :class="[selectedTab === 'swap'? 'active': '', 'menu-group-title']">
-            <img :src="selectedTab === 'swap'? require(`@/assets/images/sidemenu/swap-active.svg`): require(`@/assets/images/sidemenu/swap.svg`)"/>
-            <p>
-              {{ $t("reused.swap") }}
-            </p>
-          </div>
-        </li>
-        <li @click.prevent="switchTabs('dapps')" >
-          <div :class="[selectedTab === 'dapps'? 'active': '', 'menu-group-title']">
-            <img :src="selectedTab === 'dapps'? require(`@/assets/images/sidemenu/dapps-active.svg`): require(`@/assets/images/sidemenu/dapps.svg`)"/>
-            <p>
-              {{ $t("reused.dapps") }}
-            </p>
-          </div>
-        </li>
-        <li>
-          <div @click.prevent="toggle('openContract')" :class="[selectedTab === 'interactC' || selectedTab === 'deployC' ? 'active' : '', 'menu-group-title']">
-            <img :src="selectedTab === 'interactC' || selectedTab === 'deployC'? require(`@/assets/images/sidemenu/contract-active.svg`): require(`@/assets/images/sidemenu/contract.svg`)"/>
-            <p>{{ $t("txSideMenu.contract") }}</p>
-            <i :class="['fa', showContract ? 'fa-angle-up':'fa-angle-down']" aria-hidden="true"></i>
-          </div>
-          <ul v-show="showContract">
-            <li @click.prevent="switchTabs('interactC')" :class="selectedTab === 'interactC'? 'active': ''">
-              {{ $t("reused.interactWcontract") }}
-            </li>
-            <li @click.prevent="switchTabs('deployC')" :class="selectedTab === 'deployC'? 'active': ''">
-              {{ $t("reused.depContract") }}
-            </li>
-          </ul>
-        </li>
+        <!--<li @click.prevent="switchTabs('swap')" >-->
+          <!--<div :class="[selectedTab === 'swap'? 'active': '', 'menu-group-title']">-->
+            <!--<img :src="selectedTab === 'swap'? require(`@/assets/images/sidemenu/swap-active.svg`): require(`@/assets/images/sidemenu/swap.svg`)"/>-->
+            <!--<p>-->
+              <!--{{ $t("reused.swap") }}-->
+            <!--</p>-->
+          <!--</div>-->
+        <!--</li>-->
+        <!--<li @click.prevent="switchTabs('dapps')" >-->
+          <!--<div :class="[selectedTab === 'dapps'? 'active': '', 'menu-group-title']">-->
+            <!--<img :src="selectedTab === 'dapps'? require(`@/assets/images/sidemenu/dapps-active.svg`): require(`@/assets/images/sidemenu/dapps.svg`)"/>-->
+            <!--<p>-->
+              <!--{{ $t("reused.dapps") }}-->
+            <!--</p>-->
+          <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--<div @click.prevent="toggle('openContract')" :class="[selectedTab === 'interactC' || selectedTab === 'deployC' ? 'active' : '', 'menu-group-title']">-->
+            <!--<img :src="selectedTab === 'interactC' || selectedTab === 'deployC'? require(`@/assets/images/sidemenu/contract-active.svg`): require(`@/assets/images/sidemenu/contract.svg`)"/>-->
+            <!--<p>{{ $t("txSideMenu.contract") }}</p>-->
+            <!--<i :class="['fa', showContract ? 'fa-angle-up':'fa-angle-down']" aria-hidden="true"></i>-->
+          <!--</div>-->
+          <!--<ul v-show="showContract">-->
+            <!--<li @click.prevent="switchTabs('interactC')" :class="selectedTab === 'interactC'? 'active': ''">-->
+              <!--{{ $t("reused.interactWcontract") }}-->
+            <!--</li>-->
+            <!--<li @click.prevent="switchTabs('deployC')" :class="selectedTab === 'deployC'? 'active': ''">-->
+              <!--{{ $t("reused.depContract") }}-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</li>-->
       </ul>
     </div>
   </div>
