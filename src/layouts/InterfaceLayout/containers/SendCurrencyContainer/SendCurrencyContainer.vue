@@ -162,6 +162,7 @@ export default {
       this.$children[6].$refs.success.show()
     },
     createTx () {
+      console.log('aaa')
       const jsonInterface = [{'constant': false, 'inputs': [{'name': '_to', 'type': 'address'}, {'name': '_amount', 'type': 'uint256'}], 'name': 'transfer', 'outputs': [{'name': 'success', 'type': 'bool'}], 'payable': false, 'type': 'function'}]
       const contract = new this.$store.state.web3.eth.Contract(jsonInterface)
       const isEth = this.selectedCurrency.symbol === 'ETH'
@@ -172,9 +173,10 @@ export default {
         gas: this.gasLimit,
         nonce: this.$store.state.account.nonce,
         gasPrice: Number(unit.toWei(this.$store.state.gasPrice, 'gwei')),
-        value: isEth ? this.amount === '' ? 0 : this.amount : 0,
+        value: isEth ? this.amount === '' ? 0 : unit.toWei(this.amount, 'ether') : 0,
         to: isEth ? this.toAddress : this.selectedCurrency.addr,
-        data: this.data
+        data: this.data,
+        chainId: this.$store.state.network.type.chainID
       }
 
       if (this.toAddress === '') {

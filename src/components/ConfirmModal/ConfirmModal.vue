@@ -1,6 +1,7 @@
 <template>
   <div class="modal-container">
-    <b-modal ref="confirmation" hide-footer centered class="bootstrap-modal-wide confirmation-modal nopadding" title="Confirmation">
+    <b-modal ref="confirmation" hide-footer centered class="bootstrap-modal-wide confirmation-modal nopadding"
+             title="Confirmation">
       <div class="modal-content qrcode-modal">
         <div class="tx-info">
           <div class="tx-data tx-from">
@@ -35,22 +36,28 @@
           </div>
           <div class="expended-info" v-if="modalDetailInformation">
             <div class="grid-block">
-              <p>Network</p><p>{{$store.state.network.type.name}} by {{$store.state.network.service}}</p>
+              <p>Network</p>
+              <p>{{$store.state.network.type.name}} by {{$store.state.network.service}}</p>
             </div>
             <div class="grid-block">
-              <p>Gas Limit</p><p>{{gas}} wei</p>
+              <p>Gas Limit</p>
+              <p>{{gas}} wei</p>
             </div>
             <div class="grid-block">
-              <p>Gas Price</p><p>{{ gasPrice }} gwei</p>
+              <p>Gas Price</p>
+              <p>{{ gasPrice }} gwei</p>
             </div>
             <div class="grid-block">
-              <p>Transaction Fee</p><p> {{fee}} ETH</p>
+              <p>Transaction Fee</p>
+              <p> {{fee}} ETH</p>
             </div>
             <div class="grid-block">
-              <p>Nonce</p><p>{{nonce}}</p>
+              <p>Nonce</p>
+              <p>{{nonce}}</p>
             </div>
             <div class="grid-block">
-              <p>Data</p><p>{{data}}</p>
+              <p>Data</p>
+              <p>{{data}}</p>
             </div>
           </div>
         </div>
@@ -86,7 +93,7 @@
 
 <script>
 // eslint-disable-next-line
-const unit = require('ethjs-unit')
+  const unit = require('ethjs-unit')
 
 export default {
   props: ['fee', 'signedTx', 'data', 'from', 'gas', 'gasPrice', 'nonce', 'to', 'value', 'showSuccess'],
@@ -97,7 +104,10 @@ export default {
   },
   methods: {
     sendTx () {
-      this.$store.state.web3.eth.sendSignedTransaction(this.signedTx).on('receipt').then(res => {
+      this.$store.state.web3.eth.sendSignedTransaction(this.signedTx).on('receipt', receipt => {
+        console.log('receipt', receipt)
+      }).then(res => {
+        console.log('res', res)
         this.$store.dispatch('setAccountNonce', this.nonce + 1)
         this.$store.dispatch('addNotification', [this.from, res, 'Transaction Receipt'])
       }).catch(err => {
@@ -112,5 +122,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "ConfirmModal.scss";
+  @import "ConfirmModal.scss";
 </style>
