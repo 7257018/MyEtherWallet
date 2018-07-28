@@ -14,9 +14,19 @@ const online = (state) => {
   return state.online
 }
 
+const account = (state) => {
+  return state.account
+}
+
+const notifications = (state) => {
+  return state.notifications
+}
+
 export default {
+  account,
   all,
   wallet,
   online,
-  network
+  network,
+  notifications
 }
