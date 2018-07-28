@@ -258,6 +258,10 @@ const gb = {
     weak: 'Weak',
     strong: 'Strong',
     veryStrong: 'Very Strong'
+  },
+  transaction: {
+    success: 'success',
+    failed: 'failed'
   }
 }
 export default gb

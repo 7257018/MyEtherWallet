@@ -258,6 +258,10 @@ const cnSim = {
     weak: '弱',
     strong: '强',
     veryStrong: '非常强'
+  },
+  transaction: {
+    success: '交易成功',
+    failed: '交易失败'
   }
 }
 
