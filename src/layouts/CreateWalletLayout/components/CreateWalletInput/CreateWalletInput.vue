@@ -3,7 +3,7 @@
     <input type="password" name="password" v-bind:placeholder="ph" v-bind:value="value" v-on:input="updateValue($event.target.value)">
     <p v-show="value.length > 0">{{ $t("strength.title") }} <span :class="strengthClass">{{ strength }}</span></p>
     <button class="next-button large-round-button-green-filled" type="submit" @click.prevent="switcher(param)" :disabled="value.length === 0 && value.length < 8 && strength === ''">
-      {{ $t("reused.next") }}<img src="~@/assets/images/icons/right-arrow.png">
+      {{ $t("common.next") }}<img src="~@/assets/images/icons/right-arrow.png">
     </button>
   </form>
 </template>

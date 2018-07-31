@@ -76,7 +76,7 @@ export default {
           to: '/privacy-policy'
         },
         {
-          title: this.$t('reused.terms'),
+          title: this.$t('common.terms'),
           to: '/terms-of-conditions'
         }
       ],
@@ -146,11 +146,11 @@ export default {
               to: '/team'
             },
             {
-              text: this.$t('reused.faqs'),
+              text: this.$t('common.faqs'),
               to: '/#faqs'
             },
             {
-              text: this.$t('reused.customerSupport'),
+              text: this.$t('common.customerSupport'),
               to: '/'
             }
           ]

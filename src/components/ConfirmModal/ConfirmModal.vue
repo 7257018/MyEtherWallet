@@ -70,7 +70,7 @@
           <div class="flex-center-align">
             <div class="button-with-helper">
               <div class="submit-button large-round-button-green-filled clickable" v-on:click="sendTx">
-                {{$t('reused.confirmSend')}}
+                {{$t('common.confirmSend')}}
               </div>
               <!--<div class="tooltip-box-2">-->
               <!--<b-btn id="exPopover9">-->
