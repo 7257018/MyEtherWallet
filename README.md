@@ -1,50 +1,25 @@
 <img src="./src/assets/images/logo.png" width="300px"/>
 
 
-[![Website](https://img.shields.io/website-up-down-green-red/http/myetherwallet.com.svg?label=MyEtherWallet.com&style=flat-square)](http://www.MyEtherWallet.com/)
-[![Github All Releases](https://img.shields.io/github/downloads/MyEtherWallet/MyEtherWallet/total.svg?style=flat-square)](https://www.github.com/MyEtherWallet/MyEtherWallet/releases)
-[![GitHub issues](https://img.shields.io/github/issues-raw/MyEtherWallet/MyEtherWallet.svg?style=flat-square)](https://github.com/MyEtherWallet/MyEtherWallet/issues)
-[![Travis](https://img.shields.io/travis/MyEtherWallet/MyEtherWallet.svg?style=flat-square)](https://travis-ci.org/MyEtherWallet/MyEtherWallet)
-[![GitHub package version](https://img.shields.io/github/package-json/v/MyEtherWallet/MyEtherWallet.svg?style=flat-square)](https://github.com/MyEtherWallet/MyEtherWallet/blob/master/package.json)
-![GitHub contributors](https://img.shields.io/github/contributors/MyEtherWallet/MyEtherWallet.svg?style=flat-square)
+[![Website](https://img.shields.io/website-up-down-green-red/http/myetherwallet.com.svg?label=wallet.bihe.one&style=flat-square)](http://wallet.bihe.one/)
+[![Github All Releases](https://img.shields.io/github/downloads/WrBug/MyEtherWallet/total.svg?style=flat-square)](https://www.github.com/WrBug/MyEtherWallet/releases)
+[![GitHub issues](https://img.shields.io/github/issues-raw/WrBug/MyEtherWallet.svg?style=flat-square)](https://github.com/WrBug/MyEtherWallet/issues)
+[![Travis](https://img.shields.io/travis/WrBug/MyEtherWallet.svg?style=flat-square)](https://travis-ci.org/WrBug/MyEtherWallet)
+[![GitHub package version](https://img.shields.io/github/package-json/v/WrBug/MyEtherWallet.svg?style=flat-square)](https://github.com/WrBug/MyEtherWallet/blob/master/package.json)
+![GitHub contributors](https://img.shields.io/github/contributors/WrBug/MyEtherWallet.svg?style=flat-square)
 
 
 
-MyEtherWallet is a doorway to the Ethereum blockchain, allowing users to manage their own funds without a centralized platform. -*Stephen, #MEWForce*
+币合钱包网页版是一款开源的网页钱包，基于项目[MyEtherWallet](https://github.com/MyEtherWallet/MyEtherWallet)进行开发，支持[ETH](https://www.ethereum.org/),[Nilu](https://nilu.tech/),和国内积分[DDW](http://www.phi-block.com/platinum/ririying)
 
-!["MyEtherWallet Logo](./src/assets/images/mew-screen.png "MyEtherWallet")  
+## 使用
+访问网址 [https://wallet.bihe.one](https://wallet.bihe.one) 即可
 
-## Philosophy
-- **Empower the people**: Give people the ability to interact with the Ethereum blockchain easily, without having to run a full node.
-- **Make it easy & free**: Everyone should be able to create a wallet and send Ether & Tokens without additional cost.
-- **People are the Priority**: People are the most important & their experience trumps all else. If monetization worsens the experience, we don't do it. (e.g. ads)
-- **A learning experience, too**: We want to educate about Ethereum, security, privacy, the importance of controlling your own keys, how the blockchain works, and how Ethereum and blockchain technologies enable a better world.
-- **If it can be hacked, it will be hacked**: Never save, store, or transmit secret info, like passwords or keys.
-- **Offline / Client-Side**: User should be able to run locally and offline without issue.
-- **Private**: No tracking!!! No emails. No ads. No demographics. We don't even know how many wallets have been generated, let alone who / what / where you are.
-- **Open source & audit-able**
 
-## Getting started  
-1. Open terminal
-2. Clone the repo: `git clone git@github.com:MyEtherWallet/MyEtherWallet.git`  
-3. run `npm build`. You can also use the offline version by opening the index file from the dist folder with your preferred browser
-4. start `npm start`
-5. App should be running in `http://localhost:8080`
+## 开发
+1. 打开终端
+2. 克隆仓库 `git clone git@github.com:WrBug/MyEtherWallet.git`  
+3. 执行 `npm build`. 构建稳定的静态资源到 dist目录
+4. 执行 `npm start`
+5. 使用浏览器访问 [http://localhost:8080](http://localhost:8080)
 
-## MEW Around the Web
-
-- [Website: https://www.myetherwallet.com/](https://www.myetherwallet.com/)
-- [CX: https://chrome.google.com/webstore/detail/myetherwallet-cx/nlbmnnijcnlegkjjpcfjclmcfggfefdm](https://chrome.google.com/webstore/detail/myetherwallet-cx/nlbmnnijcnlegkjjpcfjclmcfggfefdm)
-- [Anti-phish CX](https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn)
-- [FB: https://www.facebook.com/MyEtherWallet/](https://www.facebook.com/MyEtherWallet/)
-- [Twitter: https://twitter.com/myetherwallet](https://twitter.com/myetherwallet)
-- [Medium: https://medium.com/@myetherwallet](https://medium.com/@myetherwallet)
-- [Github MEW Repo: https://github.com/MyEtherWallet/MyEtherWallet](https://github.com/MyEtherWallet/MyEtherWallet)
-- [Github MEW Org: https://github.com/MyEtherWallet](https://github.com/MyEtherWallet)
-- [Github Latest Releases: https://github.com/MyEtherWallet/MyEtherWallet/releases/latest](https://github.com/MyEtherWallet/MyEtherWallet/releases/latest)
-- [Github Anti-phish CX: https://github.com/409H/EtherAddressLookup](https://github.com/409H/EtherAddressLookup)
--  MEW ETH Donation Address: 0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D (mewtopia.eth)
--  MEW BTC Donation Address: 1DECAF2uSpFTP4L1fAHR8GCLrPqdwdLse9
-
-## Bug / Feature Request
-If you find a bug, or want a new feature added, please submit it on the [Github Issues](https://github.com/MyEtherWallet/MyEtherWallet/issues)
