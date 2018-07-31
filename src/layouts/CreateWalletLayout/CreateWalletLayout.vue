@@ -54,8 +54,8 @@ export default {
       byJson: false,
       byMnemonic: false,
       password: '',
-      useMnemonic: this.$t('reused.useMnemonic'),
-      useKeystore: this.$t('reused.useKeystore')
+      useMnemonic: this.$t('common.useMnemonic'),
+      useKeystore: this.$t('common.useKeystore')
     }
   },
   methods: {

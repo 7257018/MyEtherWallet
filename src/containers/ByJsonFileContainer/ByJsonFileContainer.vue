@@ -85,7 +85,7 @@ export default {
       downloadable: false,
       walletJson: '',
       name: '',
-      title: this.$t('reused.useKeystore')
+      title: this.$t('common.useKeystore')
     }
   },
   mounted () {

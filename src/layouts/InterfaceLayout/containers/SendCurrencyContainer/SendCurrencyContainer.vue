@@ -233,12 +233,12 @@ export default {
       this.$store.dispatch('setGasPrice', Number(val))
     },
     setBalanceToAmt () {
-      if (this.selectedCurrency.name === 'Ether') {
+      if (this.selectedCurrency.isMainNet) {
         this.amount = this.parsedBalance - this.transactionFee
       }
     },
     createDataHex () {
-      if (!e.isMainNet) {
+      if (!this.selectedCurrency.isMainNet) {
         const jsonInterface = [{'constant': false, 'inputs': [{'name': '_to', 'type': 'address'}, {'name': '_amount', 'type': 'uint256'}], 'name': 'transfer', 'outputs': [{'name': 'success', 'type': 'bool'}], 'payable': false, 'type': 'function'}]
         const contract = new this.$store.state.web3.eth.Contract(jsonInterface)
         this.data = contract.methods.transfer(this.toAddress, this.amount).encodeABI()

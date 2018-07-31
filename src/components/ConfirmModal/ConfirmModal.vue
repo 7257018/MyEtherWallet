@@ -36,7 +36,7 @@
           </div>
           <div class="expended-info" v-if="modalDetailInformation">
             <div class="grid-block">
-              <p>{{$t('txNetwork.title')}}</p>
+              <p>{{$t('interface.txNetworkTitle')}}</p>
               <p>{{$store.state.network.type.name}} by {{$store.state.network.service}}</p>
             </div>
             <div class="grid-block">

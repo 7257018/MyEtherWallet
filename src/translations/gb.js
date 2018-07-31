@@ -8,6 +8,9 @@ import createWallet from './create-wallet/gb'
 import accessWallet from './access-wallet/gb'
 import interfaceTranslations from './interface/gb'
 import team from './team/gb'
+import strength from './strength/gb'
+import dialog from './dialog/gb'
+import transaction from './transaction/gb'
 
 const gb = {
   common: common,
@@ -19,6 +22,9 @@ const gb = {
   team: team,
   accessWallet: accessWallet,
   createWallet: createWallet,
-  interface: interfaceTranslations
+  interface: interfaceTranslations,
+  strength: strength,
+  dialog: dialog,
+  transaction: transaction
 }
 export default gb

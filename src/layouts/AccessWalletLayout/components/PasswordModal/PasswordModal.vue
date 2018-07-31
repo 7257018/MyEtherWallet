@@ -8,7 +8,7 @@
       </div>
       <p class="error" v-show="error !== ''"> {{ error }} </p>
       <button class="submit-button large-round-button-green-filled" type="submit" @click.prevent="unlockWallet" :disabled=" password === '' && password.length === 0 && password.length < 9">
-        {{ $t("reused.unlockWallet") }}
+        {{ $t("common.unlockWallet") }}
       </button>
     </form>
   </b-modal>
