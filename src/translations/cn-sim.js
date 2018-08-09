@@ -11,6 +11,7 @@ import team from './team/cn-sim'
 import strength from './strength/cn-sim'
 import dialog from './dialog/cn-sim'
 import transaction from './transaction/cn-sim'
+import popover from './popover/cn-sim'
 
 const cnSim = {
   common: common,
@@ -25,6 +26,7 @@ const cnSim = {
   interface: interfaceTranslations,
   strength: strength,
   dialog: dialog,
-  transaction: transaction
+  transaction: transaction,
+  popover: popover
 }
 export default cnSim

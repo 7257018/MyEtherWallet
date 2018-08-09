@@ -26,7 +26,7 @@ const gb = {
   interface: interfaceTranslations,
   strength: strength,
   dialog: dialog,
-  transaction: transaction
+  transaction: transaction,
   popover: popover
 }
 export default gb

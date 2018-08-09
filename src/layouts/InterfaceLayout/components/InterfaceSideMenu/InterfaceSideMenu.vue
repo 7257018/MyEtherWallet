@@ -52,21 +52,21 @@
             <!--</li>-->
           </ul>
         </li>
-        <li>
-          <div @click.prevent="toggle('openMessage')" :class="[selectedTab === 'signMessage' || selectedTab === 'verifyMessage' ? 'active' : '', 'menu-group-title']">
-            <img :src="selectedTab === 'signMessage' || selectedTab === 'verifyMessage'? require(`@/assets/images/sidemenu/message-active.svg`): require(`@/assets/images/sidemenu/message.svg`)"/>
-            <p>{{ $t("interface.txSideMenuMessage") }}</p>
-            <i :class="['fa', showMessage ? 'fa-angle-up':'fa-angle-down']" aria-hidden="true"></i>
-          </div>
-          <ul v-show="showMessage">
-            <li @click.prevent="switchTabs('signMessage')" :class="selectedTab === 'signMessage'? 'active': ''">
-              {{ $t("common.signMessage") }}
-            </li>
-            <li @click.prevent="switchTabs('verifyMessage')" :class="selectedTab === 'verifyMessage'? 'active': ''">
-              {{ $t("common.verifyMessage") }}
-            </li>
-          </ul>
-        </li>
+        <!--<li>-->
+          <!--<div @click.prevent="toggle('openMessage')" :class="[selectedTab === 'signMessage' || selectedTab === 'verifyMessage' ? 'active' : '', 'menu-group-title']">-->
+            <!--<img :src="selectedTab === 'signMessage' || selectedTab === 'verifyMessage'? require(`@/assets/images/sidemenu/message-active.svg`): require(`@/assets/images/sidemenu/message.svg`)"/>-->
+            <!--<p>{{ $t("interface.txSideMenuMessage") }}</p>-->
+            <!--<i :class="['fa', showMessage ? 'fa-angle-up':'fa-angle-down']" aria-hidden="true"></i>-->
+          <!--</div>-->
+          <!--<ul v-show="showMessage">-->
+            <!--<li @click.prevent="switchTabs('signMessage')" :class="selectedTab === 'signMessage'? 'active': ''">-->
+              <!--{{ $t("common.signMessage") }}-->
+            <!--</li>-->
+            <!--<li @click.prevent="switchTabs('verifyMessage')" :class="selectedTab === 'verifyMessage'? 'active': ''">-->
+              <!--{{ $t("common.verifyMessage") }}-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</li>-->
       </ul>
     </div>
   </div>

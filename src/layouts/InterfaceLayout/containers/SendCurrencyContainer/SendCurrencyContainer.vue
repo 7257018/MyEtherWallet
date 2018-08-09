@@ -145,7 +145,6 @@ export default {
       amountValid: true,
       gasLimit: 98764,
       nonce: 0,
-      gasLimit: 21000,
       data: '0x',
       gasAmount: this.$store.state.gasPrice,
       parsedBalance: 0,

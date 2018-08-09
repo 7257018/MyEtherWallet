@@ -35,6 +35,7 @@ const interfaceTranslations = {
   txBalanceDetail: '详情',
   txNetworkTitle: '网络',
   txSideMenuTitle: '发送',
-  txSideMenuContract: '合约'
+  txSideMenuContract: '合约',
+  txSideMenuMessage: '信息'
 }
 export default interfaceTranslations
