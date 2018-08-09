@@ -18,7 +18,7 @@
 
 ## 开发
 1. 打开终端
-2. 克隆仓库 `git clone git@github.com:WrBug/MyEtherWallet.git`  
+2. 克隆仓库 `git clone git@github.com:WrBug/MyEtherWallet.git`
 3. 执行 `npm build`. 构建稳定的静态资源到 dist目录
 4. 执行 `npm start`
 5. 使用浏览器访问 [http://localhost:8080](http://localhost:8080)

@@ -10,7 +10,6 @@
 
 <script>
 import zxcvbn from 'zxcvbn'
-
 export default {
   props: ['value', 'switcher', 'param'],
   data () {
@@ -23,6 +22,7 @@ export default {
   methods: {
     async updateValue (value) {
       let score = await zxcvbn(value).score
+
       this.$emit('input', value)
       switch (score) {
         case 1:

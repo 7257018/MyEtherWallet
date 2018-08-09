@@ -1,7 +1,6 @@
 <template>
   <div class="modal-container">
-    <b-modal ref="confirmation" hide-footer centered class="bootstrap-modal-wide confirmation-modal nopadding"
-             title="Confirmation">
+    <b-modal ref="confirmation" hide-footer centered class="bootstrap-modal-wide confirmation-modal nopadding" title="Confirmation">
       <div class="modal-content qrcode-modal">
         <div class="tx-info">
           <div class="tx-data tx-from">
@@ -29,7 +28,7 @@
             <h4>Detail Information</h4>
             <div class="sliding-switch-white">
               <label class="switch">
-                <input type="checkbox" v-on:click="modalDetailInformation = !modalDetailInformation">
+                <input type="checkbox" v-on:click="modalDetailInformation = !modalDetailInformation" />
                 <span class="slider round"></span>
               </label>
             </div>
@@ -44,24 +43,20 @@
               <p>{{value}}</p>
             </div>
             <div class="grid-block">
-              <p>Gas Limit</p>
-              <p>{{gas}} wei</p>
+              <p>Gas Limit</p><p>{{gas}} wei</p>
             </div>
             <div class="grid-block">
-              <p>Gas Price</p>
-              <p>{{ gasPrice }} gwei</p>
+              <p>Gas Price</p><p>{{ gasPrice }} gwei</p>
             </div>
             <div class="grid-block">
               <p>Transaction Fee</p>
               <p> {{fee}}</p>
             </div>
             <div class="grid-block">
-              <p>Nonce</p>
-              <p>{{nonce}}</p>
+              <p>Nonce</p><p>{{nonce}}</p>
             </div>
             <div class="grid-block">
-              <p>Data</p>
-              <p>{{data}}</p>
+              <p>Data</p><p>{{data}}</p>
             </div>
           </div>
         </div>
@@ -97,7 +92,7 @@
 
 <script>
 // eslint-disable-next-line
-  const unit = require('ethjs-unit')
+const unit = require('ethjs-unit')
 
 export default {
   props: ['fee', 'signedTx', 'data', 'from', 'gas', 'gasPrice', 'nonce', 'to', 'value', 'showSuccess'],

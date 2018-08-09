@@ -8,10 +8,10 @@
           <div class="buttons">
 
             <router-link to="/create-wallet">
-              <div class="mid__round-button__blue-filled__blue-border">{{$t('common.getAFreeWallet')}}</div>
+              <div class="get-a-free-wallet mid__round-button__blue-filled__blue-border">{{$t('common.getAFreeWallet')}}</div>
             </router-link>
             <router-link to="/access-my-wallet">
-              <div class="mid-round-button-green-filled-green-border">{{$t('common.accessMyWallet')}}</div>
+              <div class="access-my-wallet mid-round-button-green-filled-green-border">{{$t('common.accessMyWallet')}}</div>
             </router-link>
 
           </div>

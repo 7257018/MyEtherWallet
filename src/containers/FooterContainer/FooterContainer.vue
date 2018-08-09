@@ -48,6 +48,7 @@
         <div class="flex-space-between foot-note">
           <div class="copyright">
             <p>
+              Pricing taken from <span>CoinMarketCap</span> <br>
               {{ $t("footer.copyright") }}
             </p>
           </div>

@@ -20,7 +20,7 @@
                   <div class="value-switch noselect">
                     <div class="sliding-switch">
                       <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" />
                         <span v-on:click="mnemonicValueBitSizeChange" class="slider round"></span>
                       </label>
                       <div class="labels">

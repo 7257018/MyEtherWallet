@@ -11,6 +11,7 @@ import team from './team/gb'
 import strength from './strength/gb'
 import dialog from './dialog/gb'
 import transaction from './transaction/gb'
+import popover from './popover/gb'
 
 const gb = {
   common: common,
@@ -26,5 +27,6 @@ const gb = {
   strength: strength,
   dialog: dialog,
   transaction: transaction
+  popover: popover
 }
 export default gb
