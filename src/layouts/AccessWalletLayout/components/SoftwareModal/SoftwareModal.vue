@@ -18,7 +18,7 @@
       <input type="file" name="file" style="display: none" ref="jsonInput" v-on:change="uploadFile" />
     </div>
     <div class="button-container">
-      <b-btn :class="[selected !== ''? '': 'disabled','mid-round-button-green-filled']" @click="continueAccess">
+      <b-btn :class="[selected !== ''? 'enabled': 'disabled','mid-round-button-green-filled']" @click="continueAccess">
         {{ $t("common.continue") }}
       </b-btn>
     </div>
@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  props: ['value', 'openPassword', 'openPrivateKeyInput'],
+  props: ['value', 'openPassword', 'openPrivateKeyInput', 'openMnemonicInput'],
   data () {
     return {
       file: '',
@@ -53,8 +53,8 @@ export default {
         this.uploadClick()
       } else if (this.selected === 'byPriv') {
         this.openPrivateKeyInput()
-      } else {
-
+      } else if (this.selected === 'byMnem') {
+        this.openMnemonicInput()
       }
     },
     select (ref) {
