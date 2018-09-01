@@ -1,10 +1,22 @@
 <template>
-  <b-modal ref="mnemonic" hide-footer class="bootstrap-modal modal-software" title="mnemonic">
+  <b-modal 
+    ref="mnemonic" 
+    hide-footer 
+    class="bootstrap-modal modal-software" 
+    title="mnemonic">
     <form class="mnemonic-form">
       <div class="input-container">
-        <input type="text" name="mnemonic" v-model="mnemonic" autocomplete="off">
+        <input 
+          v-model="mnemonic" 
+          type="text" 
+          name="mnemonic" 
+          autocomplete="off">
       </div>
-      <button class="submit-button large-round-button-green-filled" type="submit" @click.prevent="unlockWallet" :disabled=" mnemonic === '' && mnemonic.length === 0">
+      <button 
+        :disabled=" mnemonic === '' && mnemonic.length === 0" 
+        class="submit-button large-round-button-green-filled" 
+        type="submit" 
+        @click.prevent="unlockWallet">
         {{ $t("common.unlockWallet") }}
       </button>
     </form>
@@ -12,23 +24,29 @@
 </template>
 
 <script>
-const hd = require('ethereumjs-wallet/hdkey')
-const bip39 = require('bip39')
+const hd = require('ethereumjs-wallet/hdkey');
+const bip39 = require('bip39');
 export default {
-  data () {
+  data() {
     return {
       mnemonic: ''
-    }
+    };
   },
   methods: {
-    unlockWallet () {
-      this.$store.dispatch('decryptWallet', hd.fromMasterSeed(bip39.mnemonicToSeed(this.mnemonic)).derivePath("m/44'/60'/0'/0/0").getWallet())
-      this.mnemonic = ''
-      this.$router.push({ path: 'interface' })
+    unlockWallet() {
+      this.$store.dispatch(
+        'decryptWallet',
+        hd
+          .fromMasterSeed(bip39.mnemonicToSeed(this.mnemonic))
+          .derivePath("m/44'/60'/0'/0/0")
+          .getWallet()
+      );
+      this.mnemonic = '';
+      this.$router.push({ path: 'interface' });
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
-  @import "MnemonicModal";
+@import 'MnemonicModal';
 </style>

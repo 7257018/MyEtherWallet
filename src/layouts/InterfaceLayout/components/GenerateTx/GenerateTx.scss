@@ -15,7 +15,6 @@
         .title-helper {
           display: flex;
           margin-bottom: 2px;
-
         }
       }
 
@@ -186,4 +185,8 @@
       margin-top: 20px;
     }
   }
+}
+
+.with-resolver {
+  display: block !important;
 }

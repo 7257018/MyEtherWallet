@@ -41,6 +41,10 @@
     justify-content: center;
     margin-right: 15px;
     position: relative;
+
+    img {
+      height: 100%;
+    }
   }
 
   .block-content {
@@ -60,10 +64,6 @@
 
     .custom-tooltip {
       margin-right: 13px;
-    }
-
-    img {
-      
     }
   }
 }
